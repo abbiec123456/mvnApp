@@ -1,10 +1,12 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Bump Version'
+        default: 'v1.0.0'
+        required: true
 
 permissions:
   contents: read
@@ -33,8 +35,9 @@ jobs:
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@v1
         with:
-          token: ${{ secrets.DEPENDENCY_TOKEN  }}
+          token: ${{ secrets.DEPENDENCY_TOKEN }}
           directory: .
+
 
 
 
