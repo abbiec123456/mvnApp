@@ -1,20 +1,17 @@
-package com.example;
+package ie.atu.MvnApps;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-public class AppTest 
-{
+public class AppTest {
     @Test
-    public void shouldAnswerWithTrue()
-    {
+    public void shouldAnswerWithTrue() {
         assertTrue(true);
     }
 
     @Test
-    public void shouldAnswerWithFasle()
-    {
+    public void shouldAnswerWithFasle() {
         assertFalse(false);
     }
 }
