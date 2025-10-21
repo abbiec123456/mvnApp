@@ -1,4 +1,5 @@
-package com.example;
+package ie.atu.MvnApps;
+
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
