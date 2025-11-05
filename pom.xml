@@ -13,13 +13,27 @@
   <name>mvnApp</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Spring Boot parent -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.4</version>
+    <relativePath/>
+  </parent>
+
   <properties>
+    <java.version>21</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <dependencies>
-    <!-- ✅ JUnit 5 (Jupiter) test engine -->
+    <!-- Spring Boot Web for web app endpoints -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- JUnit 5 for testing -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -30,7 +44,13 @@
 
   <build>
     <plugins>
-      <!-- Java compiler -->
+      <!-- Spring Boot Maven Plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <!-- Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -40,7 +60,7 @@
         </configuration>
       </plugin>
 
-      <!-- ✅ Needed for JUnit 5 tests to run -->
+      <!-- Surefire Plugin for JUnit 5 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -50,3 +70,4 @@
   </build>
 
 </project>
+
